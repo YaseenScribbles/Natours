@@ -44,6 +44,7 @@
     &--green {
       color: $color-white;
       background-color: $color-primary-light;
+      font-family: inherit;
 
       &::after {
         background-color: $color-primary-light;
