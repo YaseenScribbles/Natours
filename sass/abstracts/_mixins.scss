@@ -1,7 +1,44 @@
 @mixin clearfix {
-    &::after {
-        content: "";
-        display: table;
-        clear: both;
+  &::after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+}
+
+/* 
+mobile < 600
+tab-port <900
+tab-land < 1200
+big-desk > 1800
+*/
+
+//for breakpoints use em. 1em is usually 16px
+//order of media query apply should be big sreen first if desktop-first approach
+//also order of inserting media queries should be base, typography, layout - grid, header,navigation,footer, sections, components
+
+@mixin respond($breakpoint) {
+  @if $breakpoint == mobile {
+    @media screen and (max-width: 37.5em) {
+      @content;
     }
+  }
+
+  @if $breakpoint == tab-port {
+    @media screen and (max-width: 56.25em) {
+      @content;
+    }
+  }
+
+  @if $breakpoint == tab-land {
+    @media screen and (max-width: 75em) {
+      @content;
+    }
+  }
+
+  @if $breakpoint == big-desk {
+    @media screen and (min-width: 112.5em) {
+      @content;
+    }
+  }
 }

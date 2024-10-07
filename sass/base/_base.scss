@@ -8,8 +8,36 @@
 
 html {
   font-size: 62.5%;
+
+  @include respond(tab-land) {
+    font-size: 56.25%;
+  }
+
+  @include respond(tab-port) {
+    font-size: 50%;
+  }
+
+  // @include respond(mobile) { 
+  // this is not needed as the size does not change, tab-port will be applied as 600px is less than 900px
+  //   font-size: 50%;
+  // }
+
+  @include respond(big-desk) {
+    font-size: 75%;
+  }
 }
 
 body {
   box-sizing: border-box;
+  padding: 3rem;
+
+  @include respond(tab-port) {
+    padding: 0;
+  }
 }
+
+::selection {
+  background-color: $color-primary;
+  color: $color-white;
+}
+

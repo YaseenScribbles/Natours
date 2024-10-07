@@ -9,8 +9,11 @@
       rel="stylesheet"
     />
 
+    <!-- for developing -->
     <link rel="stylesheet" href="css/icon-font.css" />
-    <link rel="stylesheet" href="css/style.css" />    
+    <link rel="stylesheet" href="css/style.min.css" />
+    <!-- for build -->
+    <!-- <link rel="stylesheet" href="css/style.min.css" /> -->
     <link rel="shortcut icon" type="image/png" href="img/favicon.png" />
 
     <title>Natours | Exciting tours for adventurous people</title>
@@ -66,7 +69,9 @@
           <span class="heading-main--primary"> Outdoors </span>
           <span class="heading-main--sub"> is where life happens </span>
         </h1>
-        <a class="btn btn--white btn--animated" href="#tours-section">Discover our tours</a>
+        <a class="btn btn--white btn--animated" href="#tours-section"
+          >Discover our tours</a
+        >
       </div>
     </header>
 
@@ -106,6 +111,30 @@
                 src="img/nat-1-large.jpg"
                 alt="Photo 1"
                 class="composition__photo composition__photo--p1"
+                srcset="img/nat-1.jpg 300w, img/nat-1-large.jpg 1000w"
+                sizes="(max-width:56.25em) 18vw, (max-width:37.5em) 27vw, 300px"
+              />
+
+              <img
+                src="img/nat-2-large.jpg"
+                alt="Photo 2"
+                class="composition__photo composition__photo--p2"
+                srcset="img/nat-2.jpg 300w, img/nat-2-large.jpg 1000w"
+                sizes="(max-width:56.25em) 18vw, (max-width:37.5em) 27vw, 300px"
+              />
+
+              <img
+                src="img/nat-3-large.jpg"
+                alt="Photo 3"
+                class="composition__photo composition__photo--p3"
+                srcset="img/nat-3.jpg 300w, img/nat-3-large.jpg 1000w"
+                sizes="(max-width:56.25em) 18vw, (max-width:37.5em) 27vw, 300px"
+              />
+
+              <!-- <img
+                src="img/nat-1-large.jpg"
+                alt="Photo 1"
+                class="composition__photo composition__photo--p1"
               />
               <img
                 src="img/nat-2-large.jpg"
@@ -116,7 +145,7 @@
                 src="img/nat-3-large.jpg"
                 alt="Photo 3"
                 class="composition__photo composition__photo--p3"
-              />
+              /> -->
             </div>
           </div>
         </div>
@@ -406,11 +435,21 @@
 
     <footer class="footer">
       <div class="footer__logo-box">
-        <img
-          src="img/logo-green-2x.png"
-          alt="Logo in bigger size"
-          class="footer__logo"
-        />
+        <picture class="footer__logo">
+          <source
+            srcset="
+              img/logo-green-small-1x.png 1x,
+              img/logo-green-small-2x.png 2x
+            "
+            media="(max-width:37.5em)"
+          />
+          <img
+            srcset="img/logo-green-1x.png 1x, img/logo-green-2x.png 2x"
+            alt="Logo in bigger size"
+            class="footer__logo"
+            src="img/logo-green-2x.png"
+          />
+        </picture>
       </div>
       <div class="row">
         <div class="col-1-of-2">
